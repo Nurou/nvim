@@ -13,13 +13,13 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+  -- use({
+  --     'rose-pine/neovim',
+  --     as = 'rose-pine',
+  --     config = function()
+  --   	  vim.cmd('colorscheme rose-pine')
+  --     end
+  -- })
 
   use({
       "folke/trouble.nvim",
@@ -76,5 +76,9 @@ return require('packer').startup(function(use)
 
   use("tpope/vim-surround")
   use("vim-scripts/ReplaceWithRegister")
+  use {
+    'svrana/neosolarized.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' }
+  }
 end)
 
