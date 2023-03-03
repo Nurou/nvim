@@ -15,6 +15,7 @@ opt.wrap = false
 -- search
 opt.ignorecase = true
 opt.ignorecase = true
+
 -- set grepprg and grepformat
 opt.grepprg = "rg -H --no-heading --smart-case --vimgrep"
 opt.grepformat = "%f:%l:%c:%m"
