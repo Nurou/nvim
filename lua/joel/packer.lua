@@ -84,4 +84,6 @@ return require('packer').startup(function(use)
         end
     }
     use 'nvim-tree/nvim-web-devicons'
+    -- multi-cursor support :D
+    use 'mg979/vim-visual-multi'
 end)
