@@ -1,4 +1,8 @@
-### Joel's init.lua
-Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
+### Neovim config
+
+Probably won't work entirely if copied as is.
+
+Prerequisites:
+- install [ripgrep](https://github.com/BurntSushi/ripgrep).
 
 
