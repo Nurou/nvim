@@ -77,4 +77,10 @@ return require('packer').startup(function(use)
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use { 'tpope/vim-repeat', as = 'repeat' }
     use { "smartpde/telescope-recent-files" }
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 end)
