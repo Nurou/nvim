@@ -83,4 +83,5 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
+    use 'nvim-tree/nvim-web-devicons'
 end)
