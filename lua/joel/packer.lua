@@ -75,4 +75,5 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-commentary' } -- Add vim-commentary
 
     use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use {'tpope/vim-repeat', as = 'repeat'}
 end)
