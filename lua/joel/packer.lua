@@ -10,7 +10,10 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = { { 'nvim-lua/plenary.nvim' },  { "kdheepak/lazygit.nvim" }},
+        config = function()
+            require("telescope").load_extension("lazygit")
+        end,
     }
 
     use({
@@ -24,16 +27,12 @@ return require('packer').startup(function(use)
             }
         end
     })
-
-
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("nvim-treesitter/playground")
     use("theprimeagen/harpoon")
     use("theprimeagen/refactoring.nvim")
     use("mbbill/undotree")
-    use("tpope/vim-fugitive")
     use("nvim-treesitter/nvim-treesitter-context");
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -71,7 +70,6 @@ return require('packer').startup(function(use)
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
     use { 'tpope/vim-commentary' } -- Add vim-commentary
-
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use { "smartpde/telescope-recent-files" }
     use { 'lewis6991/gitsigns.nvim' }
