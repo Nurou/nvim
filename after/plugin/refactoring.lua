@@ -1,12 +1,4 @@
-require('refactoring').setup({
-  -- overriding printf statement for cpp
-  print_var_statements = {
-      -- add a custom print var statement for cpp
-      javascript = {
-          'printf("a custom statement %%s %s", %s)'
-      }
-  }
-})
+require('refactoring').setup({})
 
 -- Remaps for the refactoring operations currently offered by the plugin
 vim.api.nvim_set_keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
