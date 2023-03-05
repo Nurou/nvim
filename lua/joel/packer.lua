@@ -65,8 +65,6 @@ return require('packer').startup(function(use)
     use("windwp/nvim-ts-autotag")
     -- tmux & split window naviator
     use("christoomey/vim-tmux-navigator")
-
-    use("tpope/vim-surround")
     use("vim-scripts/ReplaceWithRegister")
     use {
         'svrana/neosolarized.nvim',
@@ -75,7 +73,6 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-commentary' } -- Add vim-commentary
 
     use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use { 'tpope/vim-repeat', as = 'repeat' }
     use { "smartpde/telescope-recent-files" }
     use {
         'lewis6991/gitsigns.nvim',
@@ -86,4 +83,13 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     -- multi-cursor support :D
     use 'mg979/vim-visual-multi'
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
 end)
