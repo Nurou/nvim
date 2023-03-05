@@ -74,12 +74,7 @@ return require('packer').startup(function(use)
 
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use { "smartpde/telescope-recent-files" }
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
+    use { 'lewis6991/gitsigns.nvim' }
     use 'nvim-tree/nvim-web-devicons'
     -- multi-cursor support :D
     use 'mg979/vim-visual-multi'
@@ -92,4 +87,5 @@ return require('packer').startup(function(use)
             })
         end
     })
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 end)
