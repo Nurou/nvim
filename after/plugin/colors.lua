@@ -1,20 +1,15 @@
---require('rose-pine').setup({
---    disable_background = false
---})
---
---function ColorMyPencils(color)
---	color = color or "rose-pine"
---	vim.cmd.colorscheme(color)
---end
---
---ColorMyPencils()
-
-require('neosolarized').setup({
-    disable_background = false
+require("NeoSolarized").setup({
+    style = "dark", -- "dark" or "light"
+    transparent = true,
 })
 
+
+-- require('neosolarized').setup({
+--     disable_background = false
+-- })
+
 function ColorMyPencils(color)
-	color = color or "neosolarized"
+	color = color or "NeoSolarized"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

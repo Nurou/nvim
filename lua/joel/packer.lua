@@ -10,10 +10,7 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' },  { "kdheepak/lazygit.nvim" }},
-        config = function()
-            require("telescope").load_extension("lazygit")
-        end,
+        requires = { { 'nvim-lua/plenary.nvim' },  { "kdheepak/lazygit.nvim" },  {"nvim-telescope/telescope-smart-history.nvim"}},
     }
 
     use({
@@ -65,10 +62,11 @@ return require('packer').startup(function(use)
     -- tmux & split window naviator
     use("christoomey/vim-tmux-navigator")
     use("vim-scripts/ReplaceWithRegister")
-    use {
-        'svrana/neosolarized.nvim',
-        requires = { 'tjdevries/colorbuddy.nvim' }
-    }
+    use ('Tsuzat/NeoSolarized.nvim')
+    -- use {
+    --     'svrana/neosolarized.nvim',
+    --     requires = { 'tjdevries/colorbuddy.nvim' }
+    -- }
     use { 'tpope/vim-commentary' } -- Add vim-commentary
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use { "smartpde/telescope-recent-files" }
