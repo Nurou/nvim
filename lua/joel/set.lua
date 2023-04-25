@@ -38,8 +38,8 @@ opt.backspace = "indent,eol,start"
 
 -- clipboard
 -- copies yank to system clipboard
-opt.clipboard:append("unnamedplus")
-
+-- opt.clipboard:append("unnamedplus")
+-- opt.clipboard = "unnamed"
 -- split windows
 opt.splitbelow = true
 opt.splitright = true

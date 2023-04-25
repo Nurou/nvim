@@ -63,10 +63,6 @@ return require('packer').startup(function(use)
     use("christoomey/vim-tmux-navigator")
     use("vim-scripts/ReplaceWithRegister")
     use ('Tsuzat/NeoSolarized.nvim')
-    -- use {
-    --     'svrana/neosolarized.nvim',
-    --     requires = { 'tjdevries/colorbuddy.nvim' }
-    -- }
     use { 'tpope/vim-commentary' } -- Add vim-commentary
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use { "smartpde/telescope-recent-files" }
@@ -84,4 +80,6 @@ return require('packer').startup(function(use)
         end
     })
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use { 'ibhagwan/fzf-lua', requires = { 'nvim-tree/nvim-web-devicons' } }
+    use  { 'junegunn/fzf', run = './install --bin', }
 end)
