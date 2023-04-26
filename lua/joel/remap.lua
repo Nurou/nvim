@@ -48,11 +48,11 @@ keymap.set("n","x",'"_x')
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
-
-keymap.set("n", "<leader>sv", "<C-w>v")
-keymap.set("n", "<leader>sh", "<C-w>s")
-keymap.set("n", "<leader>se", "<C-w>=")
-keymap.set("n", "<leader>sx", ":close<CR>")
+-- split windows
+keymap.set("n", "<leader>sv", "<C-w>v") -- vertically
+keymap.set("n", "<leader>sh", "<C-w>s") -- horizontally
+keymap.set("n", "<leader>se", "<C-w>=") -- equalize
+keymap.set("n", "<leader>sx", ":close<CR>") -- close
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close tab
