@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' },  { "kdheepak/lazygit.nvim" },  {"nvim-telescope/telescope-smart-history.nvim"}},
+        requires = { { 'nvim-lua/plenary.nvim' }, { "kdheepak/lazygit.nvim" }, { "nvim-telescope/telescope-smart-history.nvim" } },
     }
 
     use({
@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
     -- tmux & split window naviator
     use("christoomey/vim-tmux-navigator")
     use("vim-scripts/ReplaceWithRegister")
-    use ('Tsuzat/NeoSolarized.nvim')
+    use('Tsuzat/NeoSolarized.nvim')
     use { 'tpope/vim-commentary' } -- Add vim-commentary
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use { "smartpde/telescope-recent-files" }
@@ -81,5 +81,9 @@ return require('packer').startup(function(use)
     })
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use { 'ibhagwan/fzf-lua', requires = { 'nvim-tree/nvim-web-devicons' } }
-    use  { 'junegunn/fzf', run = './install --bin', }
+    use { 'junegunn/fzf', run = './install --bin', }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 end)
