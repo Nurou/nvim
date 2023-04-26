@@ -85,4 +85,6 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
     }
+    use "almo7aya/openingh.nvim"
+    use 'kdheepak/lazygit.nvim'
 end)
