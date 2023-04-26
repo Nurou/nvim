@@ -37,9 +37,9 @@ opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
 
 -- clipboard
--- copies yank to system clipboard
--- opt.clipboard:append("unnamedplus")
--- opt.clipboard = "unnamed"
+-- use the system clipboard for all yank, delete, change and put operation
+opt.clipboard:append("unnamedplus")
+
 -- split windows
 opt.splitbelow = true
 opt.splitright = true

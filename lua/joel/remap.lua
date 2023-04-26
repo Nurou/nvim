@@ -16,9 +16,9 @@ keymap.set("n", "N", "Nzzzv")
 -- delete highlighted section into void register
 -- and then paste
 -- so paste content is not replaced
-keymap.set("x", "<leader>p", [["_dP]])
+-- keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", [["+p]])
 
--- next greatest remap ever : asbjornHaland
 keymap.set({"n", "v"}, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
