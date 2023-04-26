@@ -61,3 +61,5 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 
 
+keymap.set("n", "<C-;>", "<C-w>w") -- switch between windows
+
