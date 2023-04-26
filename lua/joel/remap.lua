@@ -4,6 +4,7 @@ local keymap = vim.keymap
 
 -- open files to the left (Lex = Left explore)
 keymap.set("n", "<leader>pv", vim.cmd.Lex)
+-- move selected block up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
