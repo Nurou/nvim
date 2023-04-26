@@ -7,12 +7,6 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' }, { "kdheepak/lazygit.nvim" }, { "nvim-telescope/telescope-smart-history.nvim" } },
-    }
-
     use({
         "folke/trouble.nvim",
         config = function()
@@ -65,7 +59,6 @@ return require('packer').startup(function(use)
     use('Tsuzat/NeoSolarized.nvim')
     use { 'tpope/vim-commentary' } -- Add vim-commentary
     use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use { "smartpde/telescope-recent-files" }
     use { 'lewis6991/gitsigns.nvim' }
     use 'nvim-tree/nvim-web-devicons'
     -- multi-cursor support :D
