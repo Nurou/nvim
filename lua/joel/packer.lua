@@ -86,5 +86,9 @@ return require('packer').startup(function(use)
         },
     }
     use "almo7aya/openingh.nvim"
+    use {
+        'ruifm/gitlinker.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+    }
     use 'kdheepak/lazygit.nvim'
 end)
