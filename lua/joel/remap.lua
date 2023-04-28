@@ -75,4 +75,5 @@ keymap.set("n", "<leader>-", [[<cmd>vertical resize -5<cr>]]) -- make the window
 -- keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 -- keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift an
 
-
+-- save buffer mapping
+keymap.set("n", "<leader>w", ":w<CR>")
