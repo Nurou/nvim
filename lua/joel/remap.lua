@@ -67,3 +67,12 @@ keymap.set("n", "<C-;>", "<C-w>w") -- switch between windows
 keymap.set("n", "<leader>q" ,":bw<Enter>" ) -- close buffer
 keymap.set("n", "<leader>w" ,"<C-w>q<Enter>" ) -- close split, keep buffer
 keymap.set("n", "<leader><Bs>" ,"<C-w>q<Enter>" ) -- close buffer, keep split
+
+
+-- resize windows
+keymap.set("n", "<leader>=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+keymap.set("n", "<leader>-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+-- keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+-- keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift an
+
+
