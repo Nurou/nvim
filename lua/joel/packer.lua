@@ -45,11 +45,9 @@ return require("packer").startup(function(use)
     use("laytan/cloak.nvim")
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
-    -- tmux & split window naviator
-    use("christoomey/vim-tmux-navigator")
     use("vim-scripts/ReplaceWithRegister")
     use("Tsuzat/NeoSolarized.nvim")
-    use({ "tpope/vim-commentary" }) -- Add vim-commentary
+    use({ "tpope/vim-commentary" })
     use("JoosepAlviste/nvim-ts-context-commentstring")
     use({ "lewis6991/gitsigns.nvim" })
     use("nvim-tree/nvim-web-devicons")
