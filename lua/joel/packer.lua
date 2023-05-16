@@ -82,4 +82,5 @@ return require("packer").startup(function(use)
     })
     use("kdheepak/lazygit.nvim")
     use("PatschD/zippy.nvim")
+    use { 'akinsho/toggleterm.nvim', version = "*" }
 end)

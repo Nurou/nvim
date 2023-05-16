@@ -54,3 +54,5 @@ opt.updatetime = 50
 -- opt.colorcolumn = "80"
 -- consider - as part of a word
 opt.iskeyword:append("-")
+
+opt.hlsearch = false
