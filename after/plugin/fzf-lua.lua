@@ -2,6 +2,18 @@ local fzf_lua = require('fzf-lua')
 local ignore = { "^node_modules/", "^.git/" }
 fzf_lua.setup({
     file_ignore_patterns = ignore,
+    winopts = {
+        height = 0.90,
+        width = 0.65,
+        row = 0.30,
+        col = 0.50,
+        hl = {
+            border = 'FloatBorder',
+        },
+        preview = {
+            layout = 'vertical',
+        },
+    },
     keymap = {
         fzf = {
             -- works but throws an error?
@@ -27,8 +39,11 @@ vim.api.nvim_set_keymap('n', '<leader>fs',
 vim.api.nvim_set_keymap('n', '<leader>re',
     "<cmd>lua require('fzf-lua').resume()<CR>",
     { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>gs',
+vim.api.nvim_set_keymap('n', '<leader>gf',
     "<cmd>lua require('fzf-lua').git_files()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gs',
+    "<cmd>lua require('fzf-lua').git_status()<CR>",
     { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>km',
     "<cmd>lua require('fzf-lua').keymaps()<CR>",
@@ -37,5 +52,5 @@ vim.api.nvim_set_keymap('n', '<leader>gw',
     "<cmd>lua require('fzf-lua').grep_cword()<CR>",
     { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ps',
-    "<cmd>lua require('fzf-lua').live_grep()<CR>",
+    "<cmd>lua require('fzf-lua').live_grep_native()<CR>",
     { noremap = true, silent = true })

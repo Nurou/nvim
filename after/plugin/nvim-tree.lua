@@ -39,7 +39,7 @@ require("nvim-tree").setup(
         -- focuses tree on the currently open buffer
         update_focused_file = {
             enable = true,
-            update_root = true,
+            update_root = false,
             ignore_list = {},
         }
     }
