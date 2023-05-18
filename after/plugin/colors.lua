@@ -4,6 +4,7 @@
 -- })
 
 require("gruvbox").setup({
+    -- needed to override gitsigns bg color
     overrides = {
         SignColumn = { link = "Normal" },
         GruvboxGreenSign = { bg = "" },
