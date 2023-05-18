@@ -61,7 +61,7 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 
 
-keymap.set("n", "<C-;>", "<C-w>w") -- switch between windows
+keymap.set("n", "<leader>;", "<C-w>w") -- switch between windows
 
 -- shortcuts for closing buffers
 keymap.set("n", "<leader>q", ":bw<Enter>") -- close buffer
