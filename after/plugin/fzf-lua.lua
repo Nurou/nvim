@@ -22,6 +22,11 @@ fzf_lua.setup({
             ["shift-up"]   = "preview-page-up",
         },
     },
+    files = {
+        actions = {
+            ["default"] = require("fzf-lua.actions").file_edit,
+        }
+    }
 })
 -- keymaps
 vim.api.nvim_set_keymap('n', '<leader>o',
@@ -30,9 +35,9 @@ vim.api.nvim_set_keymap('n', '<leader>o',
 vim.api.nvim_set_keymap('n', '<leader>b',
     "<cmd>lua require('fzf-lua').buffers()<CR>",
     { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader><leader>',
-    "<cmd>lua require('fzf-lua').oldfiles({cwd_only = true, fzf_opts = { ['--keep-right'] = '' } })<CR>",
-    { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader><leader>',
+--     "<cmd>lua require('fzf-lua').oldfiles({cwd_only = true, fzf_opts = { ['--keep-right'] = '' } })<CR>",
+--     { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fs',
     "<cmd>lua require('fzf-lua').lsp_document_symbols()<CR>",
     { noremap = true, silent = true })

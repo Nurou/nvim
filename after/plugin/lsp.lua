@@ -31,9 +31,9 @@ lsp.configure('lua-language-server', {
 -- cmp_mappings['<Tab>'] = nil
 -- cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
+-- lsp.setup_nvim_cmp({
+--     mapping = cmp_mappings
+-- })
 
 lsp.set_preferences({
     suggest_lsp_servers = true,
@@ -62,6 +62,7 @@ end)
 
 lsp.setup()
 
+-- shows inline diagnostic
 vim.diagnostic.config({
     virtual_text = true
 })

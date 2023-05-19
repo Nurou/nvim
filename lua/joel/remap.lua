@@ -13,11 +13,10 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
-
 -- delete highlighted section into void register
 -- and then paste
 -- so paste content is not replaced
--- keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", [["_dP]])
 
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
@@ -61,7 +60,7 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 
 
-keymap.set("n", "<leader>;", "<C-w>w") -- switch between windows
+keymap.set("n", "<C-w>", "<C-w>w") -- switch between windows
 
 -- shortcuts for closing buffers
 keymap.set("n", "<leader>q", ":bw<Enter>") -- close buffer
@@ -70,11 +69,11 @@ keymap.set("n", "<leader><Bs>", "<C-w>q<Enter>") -- close buffer, keep split
 
 
 -- resize windows
--- M is option (iTerm settings)
-keymap.set("n", "<M-=>", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
-keymap.set("n", "<M-->", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
-keymap.set("n", "<M-+>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally
-keymap.set("n", "<M-_>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally
+keymap.set("n", "<leader>=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+keymap.set("n", "<leader>-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+keymap.set("n", "<leader>+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally
+keymap.set("n", "<leader>_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally
 
 -- save buffer mapping
 keymap.set("n", "<leader>w", ":w<CR>")
+
