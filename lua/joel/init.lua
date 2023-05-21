@@ -3,12 +3,7 @@ require("joel.remap")
 
 local augroup = vim.api.nvim_create_augroup
 local JoelGroup = augroup('Joel', {})
--- copy relative path to clipboard
-vim.api.nvim_create_user_command("Cppath", function()
-    local path = vim.fn.expand("%:p")
-    vim.fn.setreg("+", path)
-    vim.notify('Copied "' .. path .. '" to the clipboard!')
-end, {})
+
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 

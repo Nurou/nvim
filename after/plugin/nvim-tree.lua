@@ -3,7 +3,8 @@ require("nvim-tree").setup(
         sort_by = "name",
         filters = {
             -- files not included
-            custom = { ".git" }
+            -- custom = { ".git" }
+            dotfiles = false, custom = { '^.git$' }
         },
         respect_buf_cwd = true,
         view = {

@@ -46,7 +46,7 @@ return require("packer").startup(function(use)
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
     use("vim-scripts/ReplaceWithRegister")
-    -- use("Tsuzat/NeoSolarized.nvim")
+    use("Tsuzat/NeoSolarized.nvim")
     use { "ellisonleao/gruvbox.nvim" }
     use({ "tpope/vim-commentary" })
     use("JoosepAlviste/nvim-ts-context-commentstring")

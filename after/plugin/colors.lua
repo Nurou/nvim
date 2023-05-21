@@ -16,12 +16,8 @@ require("gruvbox").setup({
         GruvboxAquaSign = { bg = "" },
     },
 })
-vim.cmd("colorscheme gruvbox")
+ vim.cmd("colorscheme gruvbox")
 
-
--- require('neosolarized').setup({
---     disable_background = false
--- })
 
 function ColorMyPencils(color)
     color = color or "gruvbox"
