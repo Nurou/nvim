@@ -30,8 +30,8 @@ keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- quickfix list navigation
-keymap.set("n", "<Tab-q>", "<cmd>cclose<CR>zz")
-keymap.set("n", "<Tab-o>", "<cmd>copen<CR>zz")
+keymap.set("n", "<C-t>", "<cmd>cclose<CR>zz")
+keymap.set("n", "<C-y>", "<cmd>copen<CR>zz")
 keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 

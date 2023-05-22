@@ -22,10 +22,16 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = JoelGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
+})
+
+-- close quickfix menu after selecting choice
+autocmd("FileType", {
+    pattern = { "qf" },
+    command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]]
 })
 
 vim.g.netrw_browse_split = 0
