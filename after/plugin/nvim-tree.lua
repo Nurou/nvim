@@ -8,7 +8,7 @@ require("nvim-tree").setup(
         },
         respect_buf_cwd = true,
         view = {
-            relativenumber = true,
+            relativenumber = false,
             centralize_selection = false,
             cursorline = true,
             debounce_delay = 15,
@@ -37,6 +37,20 @@ require("nvim-tree").setup(
                 },
             },
         },
+	renderer = {
+		indent_width = 1,
+		indent_markers = {
+			enable = false,
+			inline_arrows = true,
+			icons = {
+				corner = "└",
+				edge = "│",
+				item = "│",
+				bottom = "─",
+				none = " ",
+			},
+		},
+	},
         -- focuses tree on the currently open buffer
         update_focused_file = {
             enable = true,
