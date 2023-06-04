@@ -57,5 +57,5 @@ vim.api.nvim_set_keymap('n', '<leader>gw',
     "<cmd>lua require('fzf-lua').grep_cword()<CR>",
     { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ps',
-    "<cmd>lua require('fzf-lua').live_grep_native()<CR>",
+    "<cmd>lua require('fzf-lua').live_grep_native({ cmd = [[rg --hidden --glob '!{.git,yarn.lock, pnpm-lock.yaml, package-lock.json}']] })<CR>",
     { noremap = true, silent = true })

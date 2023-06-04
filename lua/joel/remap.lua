@@ -74,10 +74,10 @@ keymap.set("n", "<leader><Bs>", "<C-w>q<Enter>") -- close buffer, keep split
 
 
 -- resize windows
-keymap.set("n", "<leader>=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
-keymap.set("n", "<leader>-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
-keymap.set("n", "<leader>+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally
-keymap.set("n", "<leader>_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally
+keymap.set("n", "<M-=>", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+keymap.set("n", "<M-->", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+keymap.set("n", "<M-+>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally
+keymap.set("n", "<M-_>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally
 
 -- save buffer mapping
 keymap.set("n", "<leader>w", ":w<CR>")
