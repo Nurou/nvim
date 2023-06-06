@@ -10,7 +10,7 @@ opt.shiftwidth = 4
 opt.expandtab = true
 
 -- line wrapping
-opt.wrap = false
+opt.wrap = true
 
 -- search
 opt.ignorecase = true
@@ -25,7 +25,7 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
-opt.hlsearch = true
+opt.hlsearch = false
 opt.incsearch = true
 
 -- appearance
@@ -51,8 +51,10 @@ opt.isfname:append("@-@")
 opt.updatetime = 50
 
 -- higlights column with vertical line
--- opt.colorcolumn = "80"
--- consider - as part of a word
+opt.colorcolumn = "80"
+-- consider hyphen as part of a word
 opt.iskeyword:append("-")
 
-opt.hlsearch = false
+opt.spelllang = 'en_us'
+opt.spell = true
+
