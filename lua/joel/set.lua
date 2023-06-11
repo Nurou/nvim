@@ -51,10 +51,9 @@ opt.isfname:append("@-@")
 opt.updatetime = 50
 
 -- higlights column with vertical line
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 -- consider hyphen as part of a word
 opt.iskeyword:append("-")
 
 opt.spelllang = 'en_us'
 opt.spell = true
-

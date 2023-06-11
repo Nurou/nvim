@@ -26,7 +26,11 @@ fzf_lua.setup({
         actions = {
             ["default"] = require("fzf-lua.actions").file_edit,
         }
-    }
+    },
+    lsp = {
+        -- make lsp requests synchronous so they work with null-ls
+        async_or_timeout = 3000,
+    },
 })
 -- keymaps
 vim.api.nvim_set_keymap('n', '<leader>o',
@@ -56,6 +60,10 @@ vim.api.nvim_set_keymap('n', '<leader>km',
 vim.api.nvim_set_keymap('n', '<leader>gw',
     "<cmd>lua require('fzf-lua').grep_cword()<CR>",
     { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>ps',
+--     "<cmd>lua require('fzf-lua').live_grep({ cmd = [[rg --hidden --glob '!{.git,yarn.lock, pnpm-lock.yaml, package-lock.json}']] })<CR>",
+--     { noremap = true, silent = true })
+-- NB: preview and goto line won't worrk with the custom rg cmd for some reason
 vim.api.nvim_set_keymap('n', '<leader>ps',
-    "<cmd>lua require('fzf-lua').live_grep_native({ cmd = [[rg --hidden --glob '!{.git,yarn.lock, pnpm-lock.yaml, package-lock.json}']] })<CR>",
+    "<cmd>lua require('fzf-lua').live_grep_native()<CR>",
     { noremap = true, silent = true })
