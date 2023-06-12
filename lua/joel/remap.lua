@@ -82,3 +82,4 @@ keymap.set("n", "<M-_>", [[<cmd>horizontal resize -2<cr>]]) -- make the window s
 -- save buffer mapping
 keymap.set("n", "<leader>w", ":w<CR>")
 
+vim.api.nvim_set_keymap('n', '<leader>pr', ':Prettier<CR>', { noremap = true, silent = true })
