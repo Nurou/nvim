@@ -63,7 +63,6 @@ return require("packer").startup(function(use)
             })
         end,
     })
-    use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
     use({ "ibhagwan/fzf-lua", requires = { "nvim-tree/nvim-web-devicons" } })
     use({ "junegunn/fzf", run = "./install --bin" })
     use({
