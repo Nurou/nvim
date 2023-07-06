@@ -34,6 +34,22 @@ keymap.set("n", "<C-t>", "<cmd>cclose<CR>zz")
 keymap.set("n", "<C-y>", "<cmd>copen<CR>zz")
 keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+keymap.set('n', '<leader>cc', function()
+    local qf_exists = false
+    for _, win in pairs(vim.fn.getwininfo()) do
+        if win["quickfix"] == 1 then
+            qf_exists = true
+        end
+    end
+    if qf_exists == true then
+        vim.cmd "cclose"
+        return
+    end
+    if not vim.tbl_isempty(vim.fn.getqflist()) then
+        vim.cmd "copen"
+    end
+end)
+
 
 -- location list navigation
 keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
@@ -41,12 +57,12 @@ keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current script executable
--- TODO: find a better remap for this to avooid accidents
+-- TODO: find a better remap for this to avoid accidents
 -- keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
--- turn off serch highlights
+-- turn off search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x')
 
@@ -68,19 +84,15 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 
 keymap.set("n", "<C-w>", "<C-w>w") -- switch between windows
 
--- shortcuts for closing buffers
+-- shortcuts for managing buffers
 keymap.set("n", "<leader>q", ":bw<Enter>") -- close buffer
-keymap.set("n", "<leader>w", "<C-w>q<Enter>") -- close split, keep buffer
 keymap.set("n", "<leader><Bs>", "<C-w>q<Enter>") -- close buffer, keep split
-
+keymap.set("n", "<leader>w", ":w<CR>")
 
 -- resize windows
-keymap.set("n", "<M-=>", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+keymap.set("n", "<M-=>", [[<cmd>vertical resize +5<cr>]]) -- make the window bigger vertically
 keymap.set("n", "<M-->", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
 keymap.set("n", "<M-+>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally
 keymap.set("n", "<M-_>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally
-
--- save buffer mapping
-keymap.set("n", "<leader>w", ":w<CR>")
 
 vim.api.nvim_set_keymap('n', '<leader>pr', ':Prettier<CR>', { noremap = true, silent = true })
