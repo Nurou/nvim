@@ -45,8 +45,15 @@ return require("packer").startup(function(use)
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
     use("vim-scripts/ReplaceWithRegister")
+    -- themes
     use("Tsuzat/NeoSolarized.nvim")
+    use { "EdenEast/nightfox.nvim" }
     use { "ellisonleao/gruvbox.nvim" }
+    use "folke/tokyonight.nvim"
+    use { "catppuccin/nvim", as = "catppuccin" }
+    -- kanagawa
+    use "rebelot/kanagawa.nvim"
+    --
     use({ "tpope/vim-commentary" })
     use("JoosepAlviste/nvim-ts-context-commentstring")
     use({ "lewis6991/gitsigns.nvim" })

@@ -3,6 +3,18 @@ require('no-neck-pain').setup({
     buffers = {
         colors = {
             -- background = "catppuccin-frappe",
+            -- background = "#1c1917",
+            text = "#dc2626",
+        },
+        scratchPad = {
+            enabled = true,
+            location = nil
+        },
+        bo = {
+            filetype = 'md'
+        },
+        right = {
+            enabled = false
         }
     },
     mappings = {
@@ -10,7 +22,7 @@ require('no-neck-pain').setup({
         toggle = "<Leader>np",
         widthUp = "<Leader>n=",
         widthDown = "<Leader>n-",
-        scratchPad = "<Leader>ns",
+        scratchPad = "<Leader>sp",
     },
     integrations = {
         NvimTree = {
