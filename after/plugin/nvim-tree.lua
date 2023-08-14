@@ -18,12 +18,6 @@ require("nvim-tree").setup(
             preserve_window_proportions = false,
             number = false,
             signcolumn = "yes",
-            mappings = {
-                custom_only = false,
-                list = {
-                    -- user mappings go here
-                },
-            },
             float = {
                 enable = false,
                 quit_on_focus_loss = true,

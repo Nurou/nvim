@@ -4,18 +4,25 @@ local keymap = vim.keymap
 
 -- open files to the left (Lex = Left explore)
 keymap.set("n", "<leader>pv", vim.cmd.Lex)
+
 -- move selected block up and down
+-- TODO: fix since this does not respect indentation
+-- at least with TypeScript files
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("n", "J", "mzJ`z")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- jumps to the next match for the current search term
+-- and centers the screen on the line where the match was found
 keymap.set("n", "n", "nzzzv")
+-- same as above but for previous match
 keymap.set("n", "N", "Nzzzv")
+
 -- delete highlighted section into void register
--- and then paste
--- so paste content is not replaced
+-- and then paste so paste content is not replaced
 keymap.set("x", "<leader>p", [["_dP]])
 
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -34,6 +41,8 @@ keymap.set("n", "<C-t>", "<cmd>cclose<CR>zz")
 keymap.set("n", "<C-y>", "<cmd>copen<CR>zz")
 keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+
+-- toggle quickfix list
 keymap.set('n', '<leader>cc', function()
     local qf_exists = false
     for _, win in pairs(vim.fn.getwininfo()) do
@@ -55,11 +64,19 @@ end)
 keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- search and replace word under cursor
+local fzf_lua = require('fzf-lua')
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("v", "<leader>r", [[y:%s/<c-r><c-">/<c-r><c-">/gIc<Left><Left><Left><Left>]])
+
 -- make current script executable
 -- TODO: find a better remap for this to avoid accidents
 -- keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- foo
+-- bar
+-- bar
+-- boo
 keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- turn off search highlights

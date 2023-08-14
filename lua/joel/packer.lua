@@ -88,6 +88,5 @@ return require("packer").startup(function(use)
     })
     use("kdheepak/lazygit.nvim")
     use("PatschD/zippy.nvim")
-    use { 'akinsho/git-conflict.nvim', tag = "*" }
     use { "shortcuts/no-neck-pain.nvim", tag = "*" }
 end)
