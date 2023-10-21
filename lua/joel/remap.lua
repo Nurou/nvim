@@ -73,10 +73,6 @@ keymap.set("v", "<leader>r", [[y:%s/<c-r><c-">/<c-r><c-">/gIc<Left><Left><Left><
 -- TODO: find a better remap for this to avoid accidents
 -- keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- foo
--- bar
--- bar
--- boo
 keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- turn off search highlights

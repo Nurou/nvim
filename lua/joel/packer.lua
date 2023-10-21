@@ -51,6 +51,8 @@ return require("packer").startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
     use "folke/tokyonight.nvim"
     use { "catppuccin/nvim", as = "catppuccin" }
+    -- gruvbox material
+    use("sainnhe/gruvbox-material")
     -- kanagawa
     use "rebelot/kanagawa.nvim"
     --

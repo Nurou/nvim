@@ -92,7 +92,11 @@ require('kanagawa').setup({
     },
 })
 
-local chosen_theme = "NeoSolarized"
+local g = vim.g
+
+g.gruvbox_material_transparent_background = 1
+
+local chosen_theme = "gruvbox-material"
 
 
 function ColorMyPencils(color)
@@ -101,7 +105,7 @@ function ColorMyPencils(color)
 
     -- can't remember why these are here but they don't
     -- work with NeoSolarized
-    -- vim.o.background = "dark" -- or "light" for light mode
+    -- vim.opt.background = "dark" -- or "light" for light mode
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
