@@ -26,9 +26,9 @@ require("tokyonight").setup({
 
 require('rose-pine').setup({
 	--- @usage 'auto'|'main'|'moon'|'dawn'
-	variant = 'auto',
+	variant = 'moon',
 	--- @usage 'main'|'moon'|'dawn'
-	dark_variant = 'main',
+	dark_variant = 'moon',
 	bold_vert_split = false,
 	dim_nc_background = false,
 	disable_background = false,
@@ -152,7 +152,7 @@ local g = vim.g
 
 g.gruvbox_material_transparent_background = 1
 
-local chosen_theme = "gruvbox-material"
+local chosen_theme = "rose-pine"
 
 
 function ColorMyPencils(color)
