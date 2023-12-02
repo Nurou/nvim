@@ -105,4 +105,5 @@ return require("packer").startup(function(use)
     use("kdheepak/lazygit.nvim")
     use("PatschD/zippy.nvim")
     use { "shortcuts/no-neck-pain.nvim", tag = "*" }
+    use "lukas-reineke/indent-blankline.nvim"
 end)

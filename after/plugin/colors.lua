@@ -152,7 +152,7 @@ local g = vim.g
 
 g.gruvbox_material_transparent_background = 1
 
-local chosen_theme = "rose-pine"
+local chosen_theme = "gruvbox"
 
 
 function ColorMyPencils(color)
