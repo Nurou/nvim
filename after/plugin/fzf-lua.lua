@@ -42,7 +42,7 @@ vim.api.nvim_set_keymap('n', '<leader>b',
 -- vim.api.nvim_set_keymap('n', '<leader><leader>',
 --     "<cmd>lua require('fzf-lua').oldfiles({cwd_only = true, fzf_opts = { ['--keep-right'] = '' } })<CR>",
 --     { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>fs',
+vim.api.nvim_set_keymap('n', '<leader>ds',
     "<cmd>lua require('fzf-lua').lsp_document_symbols()<CR>",
     { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>re',

@@ -4,6 +4,7 @@ require("NeoSolarized").setup({
 })
 
 require("gruvbox").setup({
+    transparent_mode = true,
     -- needed to override gitsigns bg color
     overrides = {
         SignColumn = { link = "Normal" },
