@@ -1,51 +1,39 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require("lsp-zero")
 
-lsp.preset("recommended")
+lsp_zero.preset("recommended")
 
-lsp.ensure_installed({
+lsp_zero.ensure_installed({
     'tsserver',
     "tailwindcss"
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp_zero.configure('lua_ls', {
+    cmd = { 'lua-language-server' },
     settings = {
         Lua = {
+            runtime = {
+                version = 'LuaJIT',
+                path = vim.split(package.path, ';'),
+            },
             diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+                globals = { 'vim' },
+            },
+        },
+    },
 })
 
--- REWRITE THESE
--- local cmp = require('cmp')
--- local cmp_select = {behavior = cmp.SelectBehavior.Select}
--- local cmp_mappings = lsp.defaults.cmp_mappings({
---   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
---   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
---   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
---   ["<C-Space>"] = cmp.mapping.complete(),
--- })
-
--- cmp_mappings['<Tab>'] = nil
--- cmp_mappings['<S-Tab>'] = nil
-
--- lsp.setup_nvim_cmp({
---     mapping = cmp_mappings
--- })
-
-lsp.set_preferences({
+lsp_zero.set_preferences({
     suggest_lsp_servers = true,
     sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
+        error = '🔥',
+        warn = '⚠️',
+        hint = '💡',
+        info = 'ℹ️'
     }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -60,9 +48,47 @@ lsp.on_attach(function(client, bufnr)
     -- vim.keymap.set("i", "<leader>hlp", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.setup()
+
+local null_ls = require('null-ls')
+
+local null_opts = lsp_zero.build_options('null-ls', {
+    on_attach = function(client)
+        if client.server_capabilities.documentFormattingProvider then
+            vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ name = 'null-ls' })")
+        end
+        if client.server_capabilities.documentRangeFormattingProvider then
+            vim.keymap.set("x", "<Leader>f", function()
+                vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+            end, { buffer = bufnr, desc = "[lsp] format" })
+        end
+    end
+})
+
+local formatting = null_ls.builtins.formatting
+local lint = null_ls.builtins.diagnostics
+local action = null_ls.builtins.code_actions
+
+null_ls.setup({
+    on_attach = null_opts.on_attach,
+    sources = {
+        -- formatting
+        formatting.prettierd, -- JavaScript / TypeScript
+        formatting.stylua,    -- Lua
+
+        -- linting
+        lint.eslint_d,      -- JavaScript / TypeScript
+        lint.credo,         -- Elixir
+        lint.golangci_lint, -- Go
+
+        -- code actions
+        action.eslint_d, -- JavaScript / TypeScript
+    },
+})
+
+lsp_zero.setup()
 
 -- shows inline diagnostic
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true,
+    underline = true
 })
